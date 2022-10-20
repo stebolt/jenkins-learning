@@ -7,11 +7,13 @@ pipeline {
   
   stages {
     stage('Audit Tools'){
-      sh '''
-      git --version
-      docker --version
-      python3 --version
-      '''
+      steps{
+        sh '''
+          git --version
+          docker --version
+          python3 --version
+        '''
+      }
     }
     
     stage('Build') {
