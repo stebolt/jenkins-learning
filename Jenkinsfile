@@ -65,6 +65,6 @@ pipeline {
 void auditTools()
         sh '''
           git --version
-          python --version
+          python3 --version
         '''
 }
