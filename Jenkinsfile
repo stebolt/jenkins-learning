@@ -10,7 +10,6 @@ pipeline {
       steps{
         sh '''
           git --version
-          python3 --version
         '''
       }
     }
