@@ -6,6 +6,14 @@ pipeline {
   }
   
   stages {
+    stage('Audit Tools'){
+      sh '''
+      git --version
+      docker --version
+      python3 --version
+      '''
+    }
+    
     stage('Build') {
       environment {
           LOG_LEVEL='INFO'
