@@ -31,6 +31,7 @@ pipeline {
     stage('Test') {
       steps {
         echo "Testing release ${RELEASE}..."
+        writefile file: 'test-results.txt', text: 'passed'
       }
     }
     stage('Deploy') {
@@ -49,6 +50,9 @@ pipeline {
   post{
     always {
       echo 'Prints whether deploy happens or not, success or failure'
+    }
+    success {
+      archiveArtifacts 'test-results.txt'
     }
   }
 }
