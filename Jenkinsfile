@@ -61,8 +61,9 @@ pipeline {
       archiveArtifacts 'test-results.txt'
     }
   }
+}
 
-void auditTools()
+void auditTools() {
         sh '''
           git --version
           python3 --version
