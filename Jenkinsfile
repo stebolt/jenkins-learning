@@ -31,7 +31,7 @@ pipeline {
     stage('Test') {
       steps {
         echo "Testing release ${RELEASE}..."
-        writefile file: 'test-results.txt', text: 'passed'
+        writeFile file: 'test-results.txt', text: 'passed'
       }
     }
     stage('Deploy') {
