@@ -67,6 +67,6 @@ void auditTools() {
         sh '''
           git --version
           echo "Looking for Python"
-          /usr/bin/python3 --version
+          python3 ./tests.py
         '''
 }
