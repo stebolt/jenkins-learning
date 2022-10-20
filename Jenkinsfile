@@ -8,9 +8,7 @@ pipeline {
   stages {
     stage('Audit Tools'){
       steps{
-        sh '''
-          git --version
-        '''
+        auditTools()
       }
     }
     
@@ -63,4 +61,10 @@ pipeline {
       archiveArtifacts 'test-results.txt'
     }
   }
+
+void auditTools()
+        sh '''
+          git --version
+          python --version
+        '''
 }
